@@ -11,11 +11,6 @@ class Recommendation extends Model {
 
 	protected $hidden = ['created_at', 'updated_at', 'deleted_at'];
 
-	// public function scopeUser($query, $userid)
-	// {
-	// 	return $query->whereUserId($userid);
-	// }
-
 	public function scopeApply($query, $applyid)
 	{
 		return $query->whereApplyId($applyid);
@@ -30,9 +25,4 @@ class Recommendation extends Model {
 	{
 		return $this->belongsTo('App\Apply');
 	}
-
-	// public function apply()
-	// {
-	// 	return $this->belongsTo('Apply');
-	// }
 }

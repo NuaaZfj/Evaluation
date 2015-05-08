@@ -24,11 +24,6 @@ class Apply extends Model {
 		return $query->whereCollege($collegeid);
 	}
 
-	// public function recommendations()
-	// {
-	// 	return $this->belongsToMany('App\User', 'recommendations');
-	// }
-
 	public function recommendations()
 	{
 		return $this->hasMany('App\Recommendation');
@@ -36,7 +31,6 @@ class Apply extends Model {
 
 	public function scopeOrder($query)
 	{
-		return $query->orderBy('votes', 'desc');
-		// return $query->orderByRaw('rand()');
+		return $query->orderByRaw('rand()');
 	}
 }
